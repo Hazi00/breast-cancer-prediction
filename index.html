@@ -1,0 +1,46 @@
+
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card bg-warning text-black">
+                    <div class="card-body">
+        <div class="form">
+            <h1 class="card-title text-center fw-bold ">𝔅𝔯𝔢𝔞𝔰𝔱 ℭ𝔞𝔫𝔠𝔢𝔯</h1>
+            <form action="http://127.0.0.1:5000/predict" method="POST">
+                <div class="mb-2">
+                    <label for="mean_radius" class="form-label">Mean Radius:</label>
+                    <input type="number" class="form-control" id="mean_radius" name="mean_radius">
+                </div>
+                <div class="mb-2">
+                    <label for="mean_texture" class="form-label">Mean Texture:</label>
+                    <input type="number" class="form-control" id="mean_texture" name="mean_texture">
+                </div>
+                <div class="mb-2">
+                    <label for="mean_perimeter" class="form-label">Mean Perimeter:</label>
+                    <input type="number" class="form-control" id="mean_perimeter" name="mean_perimeter">
+                </div>
+                <div class="mb-2">
+                    <label for="mean_area" class="form-label">Mean Area:</label>
+                    <input type="number" class="form-control" id="mean_area" name="mean_area">
+                </div>
+                <div class="mb-2">
+                    <label for="mean_smoothness" class="form-label">Mean Smoothness:</label>
+                    <input type="number" class="form-control" id="mean_smoothness" name="mean_smoothness">
+                </div>
+                <div class="text-center">
+                <button type="submit" class="btn btn-danger btn-lg">Predict</button>
+            </div>
+              </form>
+    
+            <p class="text-center fw-bold  fs-3 mt-3"> Does this person have cancer: {{prediction}}</p>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+    {% endblock %}
